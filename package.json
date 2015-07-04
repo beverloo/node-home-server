@@ -21,7 +21,6 @@
     "browserify": "~10.2.4",
     "gulp": "gulpjs/gulp.git#4.0",
     "gulp-sftp": "~0.1.4",
-    "promise": "~7.0.3",
     "vinyl-source-stream": "~1.1.0"
   }
 }
