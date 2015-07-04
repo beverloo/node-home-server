@@ -7,7 +7,7 @@ export default class Dispatcher {
     this.routes_ = [];
   }
 
-  addRoute(route, handler) {
+  addRoute(method, route, handler) {
     this.routes_[route] = handler;
   }
 
