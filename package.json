@@ -1,0 +1,27 @@
+ {
+  "name": "node-home-server",
+  "version": "0.1.0",
+  "description": "node.js-based server for remotely controlling my house.",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beverloo/node-home-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beverloo/node-home-server/issues"
+  },
+  "scripts": {
+    "run": "gulp"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "~5.6.14",
+    "babelify": "~6.1.2",
+    "browserify": "~10.2.4",
+    "gulp": "gulpjs/gulp.git#4.0",
+    "gulp-sftp": "~0.1.4",
+    "promise": "~7.0.3",
+    "vinyl-source-stream": "~1.1.0"
+  }
+}
