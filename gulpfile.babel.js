@@ -12,16 +12,18 @@ gulp.task('default', () => {
   let babelify_options = {
     nonStandard: false,
     optional: [
-      "es7.decorators"
+      'es7.decorators',
+      'es7.functionBind'
     ]
   };
 
   let browserify_options = {
+    builtins: false,
     debug: true,
     entries: 'src/server.js',
     transform: [
       babelify.configure(babelify_options)
-    ],
+    ]
   };
 
   return browserify(browserify_options)
