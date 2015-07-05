@@ -27,6 +27,7 @@ gulp.task('default', () => {
   };
 
   return browserify(browserify_options)
+      .exclude('request')
       .bundle()
       .pipe(source('server.js'))
       .pipe(gulp.dest('./dist'));

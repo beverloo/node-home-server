@@ -17,10 +17,6 @@ export class Module {
   }
 };
 
-// Constants for identifying the kind of request a request handler is able to deal with.
-export const GET = 1;
-export const POST = 2;
-
 // Annotation that can be used on modules to indicate that the annotated method is the request
 // handler for a |method| (GET, POST) request for |route_path|.
 export function route(method, route_path) {

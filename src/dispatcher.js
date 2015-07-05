@@ -2,6 +2,13 @@
 // Use of this source code is governed by the MIT license, a copy of which can
 // be found in the LICENSE file.
 
+// Constants for identifying the kind of request a request handler is able to deal with. The API
+// follows a RESTful 
+export const GET = 1;
+export const PUT = 2;
+export const POST = 3;
+export const DELETE = 4;
+
 export default class Dispatcher {
   constructor() {
     this.routes_ = [];
