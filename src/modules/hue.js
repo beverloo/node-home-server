@@ -42,7 +42,7 @@ export default class Hue extends Module {
   // data may be slightly outdated at times.
   @route(GET, '/hue/lights')
   onGetLights(request, response) {
-    this.service_.getLights().then(lights => {
+    return this.service_.getLights().then(lights => {
       let processed_lights = [];
 
       lights.forEach(light => {
@@ -74,9 +74,9 @@ export default class Hue extends Module {
   // Possible errors include an invalid light id and errors when communicating with the bridge.
   @route(GET, '/hue/light/:id')
   onGetLightInfo(request, response, light_id) {
-    this.service_.getLightById(light_id).then(light => {
+    return this.service_.getLightById(light_id).then(light => {
       if (!light)
-        throw new Error('Invalid light supplied.');
+        throw new Error('Invalid light supplied');
 
       response.end(JSON.stringify({
         id: light.getId(),
@@ -102,7 +102,12 @@ export default class Hue extends Module {
   // include an invalid light id, and errors when communicating with the bridge.
   @route(PUT, '/hue/light/:id')
   onPutLightInfo(request, response, light_id) {
-    throw new Error('This method has not been implemented yet.');
+    return this.service_.getLightById(light_id).then(light => {
+      if (!light)
+        throw new Error('Invalid light supplied');
+
+      console.log(request.body);
+    });
   }
 
 };

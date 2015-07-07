@@ -38,7 +38,8 @@ export default class HueBridge {
       url: this.localAddress(HUE_BRIDGE_AUTH_ADDRESS),
       method: 'POST',
       json: {
-        devicetype: device_type
+        devicetype: device_type,
+        username: '2b74d0462efda8443001c921a7e3c3f'
       }
     };
 
@@ -62,6 +63,8 @@ export default class HueBridge {
 
         // Store the username we retrieved from the Hue for this session.
         this.username_ = body.success.username;
+
+        Log.info('Hue: Authenticated with username "' + this.username_ + '".');
 
         resolve(true);
       });

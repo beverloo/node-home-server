@@ -42,7 +42,7 @@ class Server {
     // TODO(peter): Implement support for simple password-based authentication.
 
     this.dispatcher_.dispatch(request, response).catch(error => {
-      response.end(JSON.stringify({ error: error }));
+      response.end(JSON.stringify({ error: error.message }));
     });
   }
 };
