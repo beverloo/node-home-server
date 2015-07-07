@@ -85,4 +85,21 @@ export default class HueService {
       return lights;
     })
   }
+
+  // Returns a promise that will be resolved with the light having the unique |id| if it exists
+  // on any of the bridges connected to this service.
+  getLightById(id) {
+    return this.initialize_promise_.then(() => {
+      let found_light = null;
+
+      this.bridges_.forEach(bridge => {
+        bridge.getLights().forEach(light => {
+          if (light.getId() == id)
+            found_light = light;
+        });
+      });
+
+      return found_light;
+    });
+  }
 };

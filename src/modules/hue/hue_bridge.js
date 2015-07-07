@@ -91,7 +91,7 @@ export default class HueBridge {
 
         this.lights_ = [];
         Object.keys(body).forEach(key => {
-          this.lights_.push(new HueLight(body[key], this));
+          this.lights_.push(new HueLight(body[key], key, this));
         });
 
         resolve();
